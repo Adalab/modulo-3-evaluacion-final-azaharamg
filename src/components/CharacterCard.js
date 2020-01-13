@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function CharacterCard(props) {
-  const { image, name, species } = props.characterItem;
+  const { id, image, name, species } = props.characterItem;
   return (
-    <li>
+    <Link to={`/character/${id}`}>
       <img src={image} alt={`character ${name}`} />
       <h2>{name}</h2>
       <p>{species}</p>
-    </li>
+    </Link>
   );
 }
 

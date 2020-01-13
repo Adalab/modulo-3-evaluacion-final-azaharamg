@@ -4,9 +4,11 @@ import CharacterCard from "./CharacterCard";
 function CharacterList(props) {
   return (
     <ul>
-      {props.filteredBySearch.map(characterItem => {
-        return <CharacterCard key={characterItem.id} characterItem={characterItem} />;
-      })}
+      {props.filteredBySearch.map(characterItem => (
+        <li>
+          <CharacterCard key={characterItem.id} characterItem={characterItem} />
+        </li>
+      ))}
     </ul>
   );
 }

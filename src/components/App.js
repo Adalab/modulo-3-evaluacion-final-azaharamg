@@ -1,8 +1,10 @@
 import React from "react";
-import "../stylesheet/App.scss";
+import { Switch, Route } from "react-router-dom";
 import getData from "../services/api.js";
-import CharacterList from "./CharacterList";
+import "../stylesheet/App.scss";
 import Filters from "./Filters";
+import CharacterList from "./CharacterList";
+import CharacterDetail from "./CharacterDetail";
 
 class App extends React.Component {
   constructor() {
@@ -12,11 +14,15 @@ class App extends React.Component {
       searchText: ""
     };
     this.handleSearch = this.handleSearch.bind(this);
-    this.filteredBySearch = this.filteredBySearch.bind(this);
+    this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
+  }
+
+  componentDidMount() {
+    getData().then(data => this.setState({ results: data.results }));
   }
 
   handleSearch(searchText) {
-    this.setState({ searchText: searchText.toLowerCase() });
+    this.setState({ searchText });
   }
 
   filteredBySearch() {
@@ -25,16 +31,25 @@ class App extends React.Component {
     });
   }
 
-  componentDidMount() {
-    getData().then(data => this.setState({ results: data.results }));
+  renderCharacterDetail(props) {
+    const routeId = parseInt(props.match.params.id);
+    const selectedCharacter = this.state.results.find(character => character.id === routeId);
+    if (selectedCharacter !== undefined) {
+      return <CharacterDetail selectedCharacter={selectedCharacter} />;
+    }
   }
 
   render() {
     return (
       <div className="App">
-        <h1>Rick and Morty</h1>
-        <Filters handleSearch={this.handleSearch} />
-        <CharacterList filteredBySearch={this.filteredBySearch()} />
+        <Switch>
+          <Route exact path="/">
+            <h1>Rick and Morty</h1>
+            <Filters handleSearch={this.handleSearch} />
+            <CharacterList filteredBySearch={this.filteredBySearch()} />
+          </Route>
+          <Route path="/character/:id" render={this.renderCharacterDetail} />
+        </Switch>
       </div>
     );
   }
