@@ -1,4 +1,5 @@
 import React from "react";
+import "../stylesheet/Filters.scss";
 
 function Filters(props) {
   const handleSearch = event => {
@@ -7,8 +8,8 @@ function Filters(props) {
   };
 
   return (
-    <form>
-      <input type="text" name="searchText" id="searchText" onChange={handleSearch} />
+    <form className="form">
+      <input className="form__searchBar" type="text" name="searchText" id="searchText" onChange={handleSearch} />
     </form>
   );
 }
