@@ -16,7 +16,7 @@ function CharacterList(props) {
 }
 
 CharacterList.propTypes = {
-  filteredBySearch: PropTypes.array
+  filteredBySearch: PropTypes.array.isRequired
 };
 
 export default CharacterList;

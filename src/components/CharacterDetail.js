@@ -50,18 +50,14 @@ function CharacterDetail(props) {
 }
 
 CharacterDetail.propTypes = {
-  image: PropTypes.string,
-  name: PropTypes.string,
-  species: PropTypes.string,
-  location: PropTypes.object,
-  episode: PropTypes.array,
-  status: PropTypes.string
+  selectedCharacter: PropTypes.shape({
+    image: PropTypes.string,
+    name: PropTypes.string,
+    species: PropTypes.string,
+    location: PropTypes.object,
+    episode: PropTypes.array,
+    status: PropTypes.string
+  }).isRequired
 };
 
 export default CharacterDetail;
-
-/*
-'Dead'
-'Alive'
-'unknown'
-*/

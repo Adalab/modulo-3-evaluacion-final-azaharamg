@@ -23,7 +23,7 @@ function Filters(props) {
 }
 
 Filters.propTypes = {
-  handleSearch: PropTypes.func
+  handleSearch: PropTypes.func.isRequired
 };
 
 export default Filters;

@@ -30,10 +30,12 @@ function CharacterCard(props) {
 }
 
 CharacterCard.propTypes = {
-  id: PropTypes.number,
-  image: PropTypes.string,
-  name: PropTypes.string,
-  species: PropTypes.string
+  characterItem: PropTypes.shape({
+    id: PropTypes.number,
+    image: PropTypes.string,
+    name: PropTypes.string,
+    species: PropTypes.string
+  }).isRequired
 };
 
 export default CharacterCard;
