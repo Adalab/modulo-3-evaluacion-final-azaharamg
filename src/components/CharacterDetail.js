@@ -1,5 +1,6 @@
 import React from "react";
 import "../stylesheet/CharacterDetail.scss";
+import PropTypes from "prop-types";
 
 function CharacterDetail(props) {
   const { image, name, species, location, episode, status } = props.selectedCharacter;
@@ -30,5 +31,14 @@ function CharacterDetail(props) {
     </main>
   );
 }
+
+CharacterDetail.propTypes = {
+  image: PropTypes.string,
+  name: PropTypes.string,
+  species: PropTypes.string,
+  location: PropTypes.object,
+  episode: PropTypes.array,
+  status: PropTypes.string
+};
 
 export default CharacterDetail;
