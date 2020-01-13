@@ -27,7 +27,7 @@ function CharacterDetail(props) {
           <ul className="section__list">
             <li className="section__list--item">
               <strong>Status:</strong>
-              <i className={statusIcon(status)}>{status}</i>
+              <i className={statusIcon(status)}></i>
             </li>
             <li className="section__list--item">
               <strong>Species:</strong> {species}
