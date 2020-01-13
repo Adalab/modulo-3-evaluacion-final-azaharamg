@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../stylesheet/CharacterDetail.scss";
 import PropTypes from "prop-types";
 
@@ -6,6 +7,9 @@ function CharacterDetail(props) {
   const { image, name, species, location, episode, status } = props.selectedCharacter;
   return (
     <main className="main">
+      <Link className="main__link" to="/">
+        <i className="fas fa-chevron-left"> Go Back</i>
+      </Link>
       <section className="section">
         <img className="section__img" src={image} alt={`Character ${name}`} />
         <div className="section__container">

@@ -1,7 +1,17 @@
 .main {
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    align-self: flex-end;
+    padding: 20px;
+  }
 }
 
 .section {
