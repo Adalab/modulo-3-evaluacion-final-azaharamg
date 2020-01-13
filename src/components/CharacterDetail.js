@@ -3,6 +3,16 @@ import { Link } from "react-router-dom";
 import "../stylesheet/CharacterDetail.scss";
 import PropTypes from "prop-types";
 
+const statusIcon = status => {
+  if (status === "Dead") {
+    return "fas fa-skull-crossbones";
+  } else if (status === "Alive") {
+    return "fas fa-heartbeat";
+  } else {
+    return "far fa-question-circle";
+  }
+};
+
 function CharacterDetail(props) {
   const { image, name, species, location, episode, status } = props.selectedCharacter;
   return (
@@ -16,7 +26,8 @@ function CharacterDetail(props) {
           <h2 className="section__title">{name}</h2>
           <ul className="section__list">
             <li className="section__list--item">
-              <strong>Status:</strong> {status}
+              <strong>Status:</strong>
+              <i className={statusIcon(status)}>{status}</i>
             </li>
             <li className="section__list--item">
               <strong>Species:</strong> {species}
@@ -46,3 +57,9 @@ CharacterDetail.propTypes = {
 };
 
 export default CharacterDetail;
+
+/*
+'Dead'
+'Alive'
+'unknown'
+*/
