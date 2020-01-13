@@ -1,0 +1,22 @@
+.list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-items: center;
+  grid-gap: 20px;
+
+  @media all and (min-width: 768px) {
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 30px;
+  }
+
+  &__item {
+    width: 130px;
+    color: white;
+    background: turquoise;
+
+    @media all and (min-width: 768px) {
+      width: 200px;
+    }
+  }
+}

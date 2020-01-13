@@ -1,11 +1,12 @@
 import React from "react";
+import "../stylesheet/CharacterList.scss";
 import CharacterCard from "./CharacterCard";
 
 function CharacterList(props) {
   return (
-    <ul>
+    <ul className="list">
       {props.filteredBySearch.map(characterItem => (
-        <li key={characterItem.id}>
+        <li key={characterItem.id} className="list__item">
           <CharacterCard characterItem={characterItem} />
         </li>
       ))}
