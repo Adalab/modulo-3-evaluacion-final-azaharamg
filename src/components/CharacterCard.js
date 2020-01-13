@@ -22,7 +22,7 @@ function CharacterCard(props) {
       <img className="list__item--img" src={image} alt={`character ${name}`} />
       <h3 className="list__item--title">{name}</h3>
       <p>
-        <i className={`list__item--paragraph ${speciesIcon(species)}`} title="species"></i>{" "}
+        <i className={`list__item--paragraph ${speciesIcon(species)}`} title="species"></i>
         {species === "Vampire" ? `It is a ${species} !!!` : species}
       </p>
     </Link>
