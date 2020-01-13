@@ -5,8 +5,8 @@ function CharacterList(props) {
   return (
     <ul>
       {props.filteredBySearch.map(characterItem => (
-        <li>
-          <CharacterCard key={characterItem.id} characterItem={characterItem} />
+        <li key={characterItem.id}>
+          <CharacterCard characterItem={characterItem} />
         </li>
       ))}
     </ul>
