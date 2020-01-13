@@ -1,9 +1,10 @@
 .list {
   list-style: none;
+  margin: 10px;
   display: grid;
   grid-template-columns: repeat(2, auto);
   justify-items: center;
-  grid-gap: 20px;
+  grid-gap: 10px;
 
   @media all and (min-width: 768px) {
     grid-template-columns: repeat(3, auto);
@@ -11,7 +12,7 @@
   }
 
   &__item {
-    width: 130px;
+    width: 135px;
     color: white;
     background: turquoise;
 

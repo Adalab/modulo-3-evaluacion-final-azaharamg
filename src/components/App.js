@@ -46,7 +46,7 @@ class App extends React.Component {
         <header className="app__header">
           <img className="app__logo" src={logo} alt="logo" />
         </header>
-        <main>
+        <main className="app__main">
           <Switch>
             <Route exact path="/">
               <Filters handleSearch={this.handleSearch} />

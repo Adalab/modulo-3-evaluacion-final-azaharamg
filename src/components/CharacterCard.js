@@ -21,9 +21,10 @@ function CharacterCard(props) {
     <Link className="list__item--link" to={`/character/${id}`}>
       <img className="list__item--img" src={image} alt={`character ${name}`} />
       <h3 className="list__item--title">{name}</h3>
-      <i className={`list__item--paragraph ${speciesIcon(species)}`} title="species">
+      <p>
+        <i className={`list__item--paragraph ${speciesIcon(species)}`} title="species"></i>{" "}
         {species === "Vampire" ? `It is a ${species} !!!` : species}
-      </i>
+      </p>
     </Link>
   );
 }

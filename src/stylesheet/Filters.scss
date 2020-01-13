@@ -4,13 +4,15 @@
 
   &__searchBar {
     background-color: #000000;
-    border: 1px solid #40e0d0;
+    border: 1px solid #00f00c;
     color: #ffffff;
+    padding: 5px;
+    font-size: 18px;
     cursor: text;
+
     @media all and (min-width: 768px) {
-      width: 50vw;
       padding: 15px;
-      margin: 40px;
+      font-size: 28px;
     }
   }
 }

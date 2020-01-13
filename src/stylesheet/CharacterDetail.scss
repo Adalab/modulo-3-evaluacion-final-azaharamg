@@ -1,36 +1,40 @@
-.main {
-  height: 100vh;
+.section {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
+  margin: 20px;
+  @media all and (min-width: 768px) {
+    margin: 30px;
+  }
 
   &__link {
     text-decoration: none;
     color: white;
     font-weight: bold;
     align-self: flex-end;
-    padding: 20px;
+    padding-bottom: 20px;
+
+    @media all and (min-width: 768px) {
+      font-size: 25px;
+    }
   }
 }
 
-.section {
+.article {
   background: #40e0d0;
-  width: 80vw;
-  height: 20vh;
-  padding: 15px;
+  padding: 10px;
   color: white;
   display: flex;
-  justify-content: center;
   align-items: center;
 
   @media all and (min-width: 768px) {
-    width: 600px;
+    width: 700px;
     height: 400px;
   }
 
   &__container {
     margin-left: 15px;
+    line-height: 1.5;
     @media all and (min-width: 768px) {
       margin-left: 30px;
     }
@@ -39,24 +43,23 @@
   &__title {
     font-size: 18px;
     @media all and (min-width: 768px) {
-      font-size: 38px;
+      font-size: 48px;
     }
   }
 
   &__list {
     list-style: none;
-    line-height: 1.5;
   }
   &__list--item {
     font-size: 12px;
     @media all and (min-width: 768px) {
-      font-size: 22px;
+      font-size: 30px;
     }
   }
   &__img {
     width: 130px;
     @media all and (min-width: 768px) {
-      width: 250px;
+      width: 350px;
     }
   }
 }
