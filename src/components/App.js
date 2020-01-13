@@ -2,13 +2,27 @@ import React from "react";
 import "../stylesheet/App.scss";
 import getData from "../services/api.js";
 import CharacterList from "./CharacterList";
+import Filters from "./Filters";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      results: []
+      results: [],
+      searchText: ""
     };
+    this.handleSearch = this.handleSearch.bind(this);
+    this.filteredBySearch = this.filteredBySearch.bind(this);
+  }
+
+  handleSearch(searchText) {
+    this.setState({ searchText: searchText.toLowerCase() });
+  }
+
+  filteredBySearch() {
+    return this.state.results.filter(character => {
+      return character.name.toLowerCase().includes(this.state.searchText);
+    });
   }
 
   componentDidMount() {
@@ -16,11 +30,11 @@ class App extends React.Component {
   }
 
   render() {
-    //console.log(this.state.results);
-
     return (
       <div className="App">
-        <CharacterList results={this.state.results} />
+        <h1>Rick and Morty</h1>
+        <Filters handleSearch={this.handleSearch} />
+        <CharacterList filteredBySearch={this.filteredBySearch()} />
       </div>
     );
   }

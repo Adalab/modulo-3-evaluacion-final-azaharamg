@@ -1,7 +1,6 @@
 import React from "react";
 
 function CharacterCard(props) {
-  //console.log(props.characterItem);
   const { image, name, species } = props.characterItem;
   return (
     <li>

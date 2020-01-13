@@ -1,7 +1,16 @@
 import React from "react";
 
-function Filters() {
-  return <div></div>;
+function Filters(props) {
+  const handleSearch = event => {
+    const searchText = event.target.value;
+    props.handleSearch(searchText);
+  };
+
+  return (
+    <form>
+      <input type="text" name="searchText" id="searchText" onChange={handleSearch} />
+    </form>
+  );
 }
 
 export default Filters;
