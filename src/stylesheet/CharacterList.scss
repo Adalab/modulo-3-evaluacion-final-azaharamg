@@ -5,7 +5,6 @@
   grid-template-columns: repeat(2, auto);
   justify-items: center;
   grid-gap: 10px;
-
   @media all and (min-width: 768px) {
     grid-template-columns: repeat(3, auto);
     grid-gap: 30px;
@@ -15,7 +14,6 @@
     width: 135px;
     color: white;
     background: turquoise;
-
     @media all and (min-width: 768px) {
       width: 200px;
     }

@@ -7,18 +7,21 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
   &--img {
     width: 135px;
     @media all and (min-width: 768px) {
       width: 200px;
     }
   }
+
   &--title {
     font-size: 16px;
     @media all and (min-width: 768px) {
       font-size: 26px;
     }
   }
+
   &--paragraph {
     font-size: 12px;
 

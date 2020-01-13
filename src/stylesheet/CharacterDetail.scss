@@ -44,12 +44,14 @@
   &__list {
     list-style: none;
   }
+
   &__list--item {
     font-size: 12px;
     @media all and (min-width: 768px) {
       font-size: 30px;
     }
   }
+
   &__img {
     width: 130px;
     @media all and (min-width: 768px) {
