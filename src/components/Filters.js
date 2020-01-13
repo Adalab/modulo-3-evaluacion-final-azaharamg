@@ -10,7 +10,14 @@ function Filters(props) {
 
   return (
     <form className="form">
-      <input className="form__searchBar" type="text" name="searchText" id="searchText" onChange={handleSearch} />
+      <input
+        className="form__searchBar"
+        type="text"
+        name="searchText"
+        id="searchText"
+        placeholder="Search your favourite..."
+        onChange={handleSearch}
+      />
     </form>
   );
 }

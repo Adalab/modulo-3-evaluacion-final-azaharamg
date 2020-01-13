@@ -18,7 +18,9 @@ function CharacterDetail(props) {
   return (
     <main className="main">
       <Link className="main__link" to="/">
-        <i className="fas fa-chevron-left"> Go Back</i>
+        <i className="fas fa-chevron-left" title="go back">
+          Go Back
+        </i>
       </Link>
       <section className="section">
         <img className="section__img" src={image} alt={`Character ${name}`} />
@@ -27,7 +29,7 @@ function CharacterDetail(props) {
           <ul className="section__list">
             <li className="section__list--item">
               <strong>Status:</strong>
-              <i className={statusIcon(status)}></i>
+              <i className={statusIcon(status)} title="status"></i>
             </li>
             <li className="section__list--item">
               <strong>Species:</strong> {species}
