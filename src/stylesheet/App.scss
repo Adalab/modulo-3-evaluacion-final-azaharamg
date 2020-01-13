@@ -1,1 +1,12 @@
+.app {
+  background: #000000;
 
+  &__header {
+    padding: 30px;
+    text-align: center;
+  }
+
+  &__logo {
+    width: 70vw;
+  }
+}
