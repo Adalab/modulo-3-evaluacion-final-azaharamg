@@ -16,6 +16,7 @@ function Filters(props) {
         name="searchText"
         id="searchText"
         placeholder="Search your favourite..."
+        value={props.value}
         onChange={handleSearch}
       />
     </form>

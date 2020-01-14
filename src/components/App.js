@@ -49,7 +49,7 @@ class App extends React.Component {
         <main className="app__main">
           <Switch>
             <Route exact path="/">
-              <Filters handleSearch={this.handleSearch} />
+              <Filters handleSearch={this.handleSearch} value={this.state.searchText} />
               <CharacterList filteredBySearch={this.filteredBySearch()} />
             </Route>
             <Route path="/character/:id" render={this.renderCharacterDetail} />
