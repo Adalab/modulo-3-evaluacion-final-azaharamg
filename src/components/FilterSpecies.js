@@ -11,15 +11,14 @@ function FilterSpecies(props) {
 
   return (
     <form className="form">
-      <select onChange={handleSpecies}>
-        <option defaultValue={props.value}>{props.value}</option>
+      <select onChange={handleSpecies} defaultValue={props.value}>
+        <option value="all">Todos</option>
         {fileteredSpecies.map(species => (
           <option key={species} value={species}>
             {species}
           </option>
         ))}
       </select>
-      />
     </form>
   );
 }

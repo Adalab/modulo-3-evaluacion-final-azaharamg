@@ -14,7 +14,7 @@ class App extends React.Component {
     this.state = {
       results: [],
       searchText: "",
-      searchSpecies: ""
+      searchSpecies: "all"
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleSpecies = this.handleSpecies.bind(this);
@@ -41,7 +41,7 @@ class App extends React.Component {
         })
         //Filtrar por especie
         .filter(character =>
-          this.state.searchSpecies !== "" ? character.species === this.state.searchSpecies : this.state.results
+          this.state.searchSpecies === "all" ? true : character.species === this.state.searchSpecies
         )
     );
   }
