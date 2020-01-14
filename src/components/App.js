@@ -6,15 +6,18 @@ import "../stylesheet/App.scss";
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
+import FilterSpecies from "./FilterSpecies";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       results: [],
-      searchText: ""
+      searchText: "",
+      searchSpecies: ""
     };
     this.handleSearch = this.handleSearch.bind(this);
+    this.handleSpecies = this.handleSpecies.bind(this);
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
   }
 
@@ -26,10 +29,21 @@ class App extends React.Component {
     this.setState({ searchText });
   }
 
+  handleSpecies(searchSpecies) {
+    this.setState({ searchSpecies });
+  }
+
   filteredBySearch() {
-    return this.state.results.filter(character => {
-      return character.name.toLowerCase().includes(this.state.searchText);
-    });
+    return (
+      this.state.results
+        .filter(character => {
+          return character.name.toLowerCase().includes(this.state.searchText);
+        })
+        //Filtrar por especie
+        .filter(character =>
+          this.state.searchSpecies !== "" ? character.species === this.state.searchSpecies : this.state.results
+        )
+    );
   }
 
   renderCharacterDetail(props) {
@@ -49,6 +63,11 @@ class App extends React.Component {
         <main className="app__main">
           <Switch>
             <Route exact path="/">
+              <FilterSpecies
+                handleSpecies={this.handleSpecies}
+                results={this.state.results}
+                value={this.state.searchSpecies}
+              />
               <Filters handleSearch={this.handleSearch} value={this.state.searchText} />
               <CharacterList filteredBySearch={this.filteredBySearch()} />
             </Route>
