@@ -14,7 +14,7 @@ const statusIcon = status => {
 };
 
 function CharacterDetail(props) {
-  const { image, name, species, location, episode, status } = props.selectedCharacter;
+  const { image, name, species, origin, episode, status } = props.selectedCharacter;
   return (
     <section className="section">
       <Link className="section__link" to="/">
@@ -36,7 +36,7 @@ function CharacterDetail(props) {
             </li>
             <li className="article__list--item">
               <strong>Origin: </strong>
-              {location.name}
+              {origin.name}
             </li>
             <li className="article__list--item">
               <strong>Episodes: </strong>
@@ -54,7 +54,7 @@ CharacterDetail.propTypes = {
     image: PropTypes.string,
     name: PropTypes.string,
     species: PropTypes.string,
-    location: PropTypes.object,
+    origin: PropTypes.object,
     episode: PropTypes.array,
     status: PropTypes.string
   }).isRequired
